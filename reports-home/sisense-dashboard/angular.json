@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sisense-dasgboard": {
+    "sisense-dashboard": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sisense-dasgboard",
+            "outputPath": "dist/sisense-dashboard",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sisense-dasgboard:build"
+            "browserTarget": "sisense-dashboard:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sisense-dasgboard:build:production"
+              "browserTarget": "sisense-dashboard:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sisense-dasgboard:build"
+            "browserTarget": "sisense-dashboard:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "sisense-dasgboard:serve"
+            "devServerTarget": "sisense-dashboard:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sisense-dasgboard:serve:production"
+              "devServerTarget": "sisense-dashboard:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "sisense-dasgboard"
+  "defaultProject": "sisense-dashboard"
 }
