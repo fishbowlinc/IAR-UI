@@ -12,12 +12,6 @@ const routes: Routes = [
   { path: 'reportDashboard', component: ReportComponent ,canActivate: [ FishbowlCheckService, SisenseCheckService] }
 ];
 
-/*const routes: Routes = [
-  { path: '', redirectTo: '/reportList' , pathMatch: 'full'},
-  { path: 'reportList', component: ReportListComponent },
-  { path: 'reportDashboard', component: ReportComponent  }
-];*/
-
 @NgModule({
   imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled', useHash: true})],
   exports: [RouterModule],

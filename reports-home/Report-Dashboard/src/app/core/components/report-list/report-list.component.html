@@ -1,20 +1,16 @@
-<h2>List of Reports</h2>
-<ul class="heroes">
-  <li *ngFor="let report of reportList"
-    [class.selected]="report === selectedReport"
-    (click)="onSelect(report)">
-    <span class="badge">{{report.id}}</span> {{report.name}}
-  </li>
-</ul>
-
-<div *ngIf="selectedReport">
-
-  <h2>{{selectedReport.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedReport.id}}</div>
-  <div>
-    <label>name:
-      <!--<input [(ngModel)]="selectedReport.name" placeholder="name"/>-->
-    </label>
+<div class="row reports">
+  <div class="col-md-12 titleText">
+      <h2>List of Reports</h2>
   </div>
-
+  <div >
+  <div class="list">
+  <div id="reportListContainer" [ngClass]="admin-container " *ngFor="let report of reportList" (click)="onSelect(report)">
+    <div class="section-2" [ngClass]="admin-section-2">
+      <div class="report-text-container">
+        <span class="main-text" >{{report.name}}</span>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
 </div>

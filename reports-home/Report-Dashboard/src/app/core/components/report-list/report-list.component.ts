@@ -13,11 +13,9 @@ export class ReportListComponent implements OnInit , OnDestroy {
   reportList = REPORTLIST;
   selectedReport: Report;
   constructor(private router:Router , private dataService:DataService) {
-debugger;
   }
 
   ngOnInit() {
-    debugger;
   }
 
   ngOnDestroy() {
