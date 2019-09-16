@@ -40,13 +40,21 @@
     font-weight: 500;
     font-family: 'Roboto';
 }
-.btn-logout {
-    font-family: 'Roboto';
-    border-radius: 8px;
-    border: none;
-    float: right;
+.logoutBtn{
+    padding: 0.825em 1.5em;
+	line-height: 1;
+    background: #ffffff;
+    color: #555555;
+    height: auto;
+    width: auto;
+    border-radius: 0.25em;
+    font-size: 1em;
+    font-weight: 400;
+    cursor: pointer;
+    border: 0 none !important;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.15);
 }
 .right-section {
     float:right;
-    padding: 25px 40px 0 20px;
+    padding: 16px 40px 0 20px;
 }

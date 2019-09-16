@@ -8,7 +8,11 @@ import { CookieService } from 'ngx-cookie-service';
 import { UserService } from './shared/services/user-service';
 import { ReportComponent } from './core/components/report/report.component';
 import { ReportListComponent } from './core/components/report-list/report-list.component';
-import {DataService} from '../app/shared/services/data-service.service'
+import {DataService} from '../app/shared/services/data-service.service';
+
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -20,7 +24,10 @@ import {DataService} from '../app/shared/services/data-service.service'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [
     CookieService,
