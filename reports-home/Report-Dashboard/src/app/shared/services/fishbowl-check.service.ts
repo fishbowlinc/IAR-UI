@@ -9,7 +9,14 @@ export class FishbowlCheckService implements CanActivate {
     constructor(private _authService: AuthService ) {}
 
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-        return this._authService.isfishbowlCookieExist();
+        
+        if(this._authService.isfishbowlCookieExist()){
+            return this._authService.isfishbowlCookieExist();
+        }
+        else{
+            window.location.href ='http://ir2qa.fishbowl.com:8880/logout';
+        }
+        
         //return true;
         // navigate to login page
         // this._router.navigate(['/login']);
