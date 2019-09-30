@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppConstants } from '../../../app.constants';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router'
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +13,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logoutText: string = AppConstants.LOGOUT_TEXT;
   logoutSubscription: Subscription;
 
-  constructor( private router:Router) {}
+  constructor( private router:Router , private cookieService :CookieService) {}
 
   ngOnInit() {
   }
 
   logoutUser() {
-    window.location.href ='http://ir2qa.fishbowl.com:8880/logout';  
+    this.cookieService.deleteAll();
+    window.location.href ='http://loginqa.fishbowl.com/Public/Login.aspx';  
+    
   }
 
   ngOnDestroy() {
