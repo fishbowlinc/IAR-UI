@@ -22,6 +22,7 @@ export class ReportComponent implements OnInit {
         ifrm.setAttribute("src"," http://10.200.10.21:8081/app/main#/dashboards/"+this.report.dashboardId+"?embed=true");
         ifrm.style.width = "100%";
         ifrm.style.height = "100%";
+        ifrm.style.paddingLeft = "4%";
         ifrm.scrolling = "auto";
         ifrm.frameBorder = "0";
         frameDiv.appendChild(ifrm);
