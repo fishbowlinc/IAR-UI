@@ -24,17 +24,12 @@ export class ReportListComponent implements OnInit , OnDestroy {
   }
   
   onSelect(report: Report): void {
+    this.cookieService.set("eCube", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"));
     if(report.name === 'Mailing Summary'){
-      this.cookieService.set("member summary", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"));
-      this.cookieService.set('mailing summary', 'Master Database');
+      this.cookieService.set('eCube',  window.btoa('Master Database'));
     }
-    else if(report.name === 'Member Summary'){
-      this.cookieService.set("mailing summary", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"));
-      this.cookieService.set('member summary', 'Monthly Summary');
-    }
-    else{
-      this.cookieService.set("member summary", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"));
-      this.cookieService.set("mailing summary", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"));
+    if(report.name === 'Member Summary'){
+      this.cookieService.set('eCube',  window.btoa('Monthly Summary'));
     }
     
     this.selectedReport = report;
