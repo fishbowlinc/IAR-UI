@@ -23,6 +23,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logoutUser() {
     //this.cookieService.deleteAll();
     // to delete the cookies 
+    if(this.cookieService.get('eCube')){
+      this.cookieService.set("eCube", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , 'ir2qa.fishbowl.com');
+    }
+    
     if(this._authService.isfishbowlCookieExist()){
 
       if (location.host.indexOf('qa') > -1) {
