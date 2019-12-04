@@ -25,12 +25,16 @@ export class ReportComponent implements OnInit {
         ifrm.style.paddingLeft = "4%";
         ifrm.scrolling = "auto";
         ifrm.frameBorder = "0";
+        ifrm.onload = load;
+
         frameDiv.appendChild(ifrm);
-    }
-    else{
-      this.router.navigate(['/reportList']);  
-    }
-     
+      }
+      else{
+        this.router.navigate(['/reportList']);  
+      }
+      function load(){
+        document.getElementById("fbTheme-loader").style.display = "none";
+      } 
   }
 
 }
