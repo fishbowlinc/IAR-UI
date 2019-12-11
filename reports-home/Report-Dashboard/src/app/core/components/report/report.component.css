@@ -1,5 +1,6 @@
 .frame{
-    height:500px;
+    width:100%;
+    height:100vh;
 }
 .fbTheme-loader{
     width: 100px;
