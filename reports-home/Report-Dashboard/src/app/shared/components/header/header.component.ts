@@ -23,8 +23,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logoutUser() {
     //this.cookieService.deleteAll();
     // to delete the cookies 
-    if(this.cookieService.get('eCube')){
-      this.cookieService.set("eCube", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , 'ir2qa.fishbowl.com');
+    if(this.cookieService.get('_irecube')){
+      this.cookieService.set("_irecube", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , 'ir2qa.fishbowl.com');
     }
     
     if(this._authService.isfishbowlCookieExist()){
@@ -57,7 +57,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       
     }
     if(this._authService.isSisenseCookieExist()){
-      this.cookieService.set("IR_SessionId", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , '.ir2qa.fishbowl.com');
+      this.cookieService.set("_irsession_id", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , '.ir2qa.fishbowl.com');
     }
     if(location.href.indexOf('reportDashboard') > -1){
       window.location.href = 'http://ir2qa.fishbowl.com:8880/logout';
