@@ -23,7 +23,7 @@ export class ReportComponent implements OnInit {
       if(this.report.dashboardId){ 
         var ifrm = document.createElement("iframe");
         //ifrm.setAttribute("src"," http://10.200.10.21:8081/app/main#/dashboards/"+this.report.dashboardId+"?embed=true&h=false&l=false&t=false&filter="+ brandFilter);
-        ifrm.setAttribute("src"," http://10.200.10.21:8081/app/main#/dashboards/"+this.report.dashboardId+"?embed=true&h=false&l=false&t=false");
+        ifrm.setAttribute("src"," https://sisense.fishbowl.com/app/main#/dashboards/"+this.report.dashboardId+"?embed=true&h=false&l=false&t=false");
         ifrm.style.width = "100%";
         ifrm.style.height = "100%";
         ifrm.style.paddingLeft = "52px";
