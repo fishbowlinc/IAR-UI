@@ -14,7 +14,7 @@ export class FishbowlCheckService implements CanActivate {
             return this._authService.isfishbowlCookieExist();
         }
         else{
-            window.location.href ='http://loginqa.fishbowl.com/Public/Login.aspx';
+            window.location.href ='https://loginqa.fishbowl.com/Public/Login.aspx';
         }
         
         //return true;
