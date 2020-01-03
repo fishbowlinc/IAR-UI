@@ -13,7 +13,7 @@ export class SisenseCheckService implements CanActivate {
             return this._authService.isSisenseCookieExist();
         }
         else{
-            window.location.href ='http://loginqa.fishbowl.com/Public/Login.aspx';
+            window.location.href ='https://loginqa.fishbowl.com/Public/Login.aspx';
             //window.location.href = "https://loginqa.fishbowl.com/AppSelect.aspx?display=1";
         }
         

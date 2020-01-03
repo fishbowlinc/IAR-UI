@@ -60,10 +60,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.cookieService.set("_irsession_id", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , '.ir2qa.fishbowl.com');
     }
     if(location.href.indexOf('reportDashboard') > -1){
-      window.location.href = 'http://ir2qa.fishbowl.com:8880/logout';
+      window.location.href = 'https://ir2qa.fishbowl.com/iar/sso/logout-redirect';
     }
     else{
-      window.location.href ='http://loginqa.fishbowl.com/Public/Login.aspx';  
+      window.location.href ='https://loginqa.fishbowl.com/Public/Login.aspx';  
     }
     
     
