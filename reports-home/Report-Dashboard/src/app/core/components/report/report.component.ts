@@ -11,12 +11,13 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ReportComponent implements OnInit {
   public report;
-
+  
   constructor(private router:Router  , private dataService : DataService , private cookieService: CookieService) {
     this.report = dataService.getOption();
    }
 
   ngOnInit() {
+        this.dataService.toggleSession("True")
       //var brandList = getBrandListCookie(this.cookieService);
       //var brandFilter = constructBrandDetails(brandList , this.report);
       var frameDiv = document.getElementById('fm');

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppConstants } from '../../../app.constants';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router'
+import { DataService } from 'src/app/shared/services/data-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import {AuthService} from '../../services/auth-service';
 
@@ -15,12 +16,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logoutText: string = AppConstants.LOGOUT_TEXT;
   logoutSubscription: Subscription;
 
-  constructor(private _authService:AuthService ,  private router:Router , private cookieService :CookieService) {}
+  constructor(private _authService:AuthService ,   private dataService : DataService  ,private router:Router , private cookieService :CookieService) {
+   
+  }
 
   ngOnInit() {
   }
 
   logoutUser() {
+    
     //this.cookieService.deleteAll();
     // to delete the cookies 
     if(this.cookieService.get('_irecube')){
@@ -59,12 +63,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if(this._authService.isSisenseCookieExist()){
       this.cookieService.set("_irsession_id", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , '.ir2qa.fishbowl.com');
     }
-    if(location.href.indexOf('reportDashboard') > -1){
+    this.dataService.currentSession.source.subscribe(translatedValue => { 
+     if(translatedValue == "True"){//location.href.indexOf('reportDashboard') > -1){
       window.location.href = 'https://ir2qa.fishbowl.com/iar/sso/logout-redirect';
     }
     else{
       window.location.href ='https://loginqa.fishbowl.com/Public/Login.aspx';  
     }
+    });
+    
     
     
   }
