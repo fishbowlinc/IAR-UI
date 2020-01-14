@@ -13,14 +13,22 @@ import { DataService } from 'src/app/shared/services/data-service.service';
 export class ReportListComponent implements OnInit , OnDestroy {
   reportList = REPORTLIST;
   selectedReport: Report;
+  public report;
   constructor(private router:Router , private route:ActivatedRoute, private dataService:DataService , private cookieService:CookieService) {
+    this.report = dataService.getOption();
   }
 
   ngOnInit() {
   }
 
   ngOnDestroy() {
-    this.dataService.setOption(this.selectedReport);
+    if(this.selectedReport){
+      this.dataService.setOption(this.selectedReport);
+    }
+    else{
+      this.dataService.setOption(this.report);
+    }
+    
   }
   
   onSelect(report: Report): void {
