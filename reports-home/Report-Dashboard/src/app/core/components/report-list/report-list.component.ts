@@ -39,9 +39,9 @@ export class ReportListComponent implements OnInit , OnDestroy {
       if(this.cookieService.get('_irecube')){
         this.cookieService.set("_irecube", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , 'ir2qa.fishbowl.com');
       }
-      if(this._authService.isSisenseCookieExist()){
-        this.cookieService.set("_irsession_id", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , '.ir2qa.fishbowl.com');
-      }
+      //if(this._authService.isSisenseCookieExist()){
+        //this.cookieService.set("_irsession_id", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , '.ir2qa.fishbowl.com');
+      //}
       if(this.cookieService.check('.prism_shared')){
         this.cookieService.set(".prism_shared", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , 'sisense.fishbowl.com');
       }
