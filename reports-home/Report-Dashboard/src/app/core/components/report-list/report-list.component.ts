@@ -55,6 +55,9 @@ export class ReportListComponent implements OnInit , OnDestroy {
     if(report.name === 'Member Summary'){
       this.cookieService.set('_irecube',  window.btoa('Monthly Summary'));
     }
+    if(report.name === 'Mailing Summary (QA)'){
+      this.cookieService.set('_irecube',  window.btoa('Warehouse'));
+    }
     
     this.selectedReport = report;
     this.router.navigate(['/reportDashboard']);  
