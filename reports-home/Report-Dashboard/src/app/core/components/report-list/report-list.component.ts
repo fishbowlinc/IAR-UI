@@ -49,13 +49,13 @@ export class ReportListComponent implements OnInit , OnDestroy {
   }
   onSelect(report: Report): void {
     this.cookieService.set("_irecube", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"));
-    if(report.name === 'Mailing Summary'){
+    /*if(report.name === 'Mailing Summary'){
       this.cookieService.set('_irecube',  window.btoa('Master Database'));
-    }
+    }*/
     if(report.name === 'Member Summary'){
       this.cookieService.set('_irecube',  window.btoa('Monthly Summary'));
     }
-    if(report.name === 'Mailing Summary (QA)'){
+    if(report.name === 'Mailing Summary'){
       this.cookieService.set('_irecube',  window.btoa('Warehouse'));
     }
     
