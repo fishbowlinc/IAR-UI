@@ -53,14 +53,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
             "",
             new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
             "/",
-            ".fishbowl.com"
+            ".fishbowl.com",
+            true
           );
           this.cookieService.set(
             "QA.ASPXFORMSAUTH",
             "",
             new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
             "/",
-            ".fishbowl.com"
+            ".fishbowl.com",
+            true
           );
         }
       } else if (location.host.indexOf("staging") > -1) {
@@ -79,14 +81,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
             "",
             new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
             "/",
-            ".fishbowl.com"
+            ".fishbowl.com",
+            true
           );
           this.cookieService.set(
             "STAGING.ASPXFORMSAUTH",
             "",
             new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
             "/",
-            ".fishbowl.com"
+            ".fishbowl.com",
+            true
           );
         }
       } else {
@@ -103,14 +107,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
             "",
             new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
             "/",
-            ".fishbowl.com"
+            ".fishbowl.com",
+            true
           );
           this.cookieService.set(
             "ASPXFORMSAUTH",
             "",
             new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
             "/",
-            ".fishbowl.com"
+            ".fishbowl.com",
+            true
           );
         }
       }
