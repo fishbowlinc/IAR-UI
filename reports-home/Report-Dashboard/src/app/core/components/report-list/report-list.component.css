@@ -1,0 +1,105 @@
+
+  #reportListContainer {
+    height: 85px;
+    border-radius: 0 4px 4px 0;
+    background-color: #FFFFFF;
+      box-shadow: inset 3px 0 0 0 #196494, 0 1px 2px 0 rgba(0,0,0,0.15);
+      margin-bottom: 19px;
+      display: grid;
+      grid-template-columns: 10% 68% 22% 11%;
+      border: none;
+      padding-right: 3em;
+  }
+  .admin-container {
+      height: 115px !important;
+      cursor:pointer;
+  }
+  .section-1 {
+      zoom: 2.50;
+      margin: 8px 13px;
+  }
+  .admin-section-1 {
+      margin-top: 13px !important;
+  }
+  .report-text-container{
+    display: grid;
+      grid-template-columns: 100%;
+    padding:30px;
+  }
+  .admin-section-2 {
+      margin-top: 32px !important;
+  }
+  .section-2 .report-text-container span {
+      padding: 0px 10px;
+      color: #196494;
+    font-family: 'Roboto';
+  }
+  .report-text-container span.main-text{
+      height: 21px;
+    font-size: 21px;
+      line-height: 21px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      width:400px;
+  }
+  .report-text-container span.sub-content {
+    height: 16px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15px;
+  }
+  .sub-text-blue {
+      color: #0D74AF !important;
+      text-transform: uppercase;
+  }
+  .sub-text-red {
+      color: #99090C !important;
+      text-transform: uppercase;
+  }
+  .sub-text-green {
+      color: #57AD68 !important;
+      text-transform: uppercase;
+  }
+  .section-3 {
+    height: 42px;
+    color: #285371;
+    font-family: 'Roboto';
+    font-size: 12px;
+    line-height: 21px;
+      text-align: right;
+      margin: 21px 38px 22px 0px;
+  }
+  .section-4 {
+    height: 70px;
+    width: 52px;
+    background-color: #F9F9F9;
+    box-shadow: -1px 0 2px 0 rgba(0,0,0,0.1);
+  }
+  .admin-section-4 {
+      height: 115px !important;
+  }
+  .section-4 .text-content {
+      margin-top: 33px;
+      margin-left: 15px;
+      cursor: pointer;
+  }
+  .icon-chevron-right {
+      zoom: 1.35;
+  }
+  .section-4 .admin-text-content{
+      margin-top: 42px !important;
+  }
+  .reports{
+    background-color: #1B6A9C;
+    padding: 30px;
+    margin: 30px;
+  }  
+  .titleText{
+    color:white;
+    padding: 0 0 20px 80px;
+  }
+  .list{
+    width: 900px;
+    padding-left: 80px;
+  }

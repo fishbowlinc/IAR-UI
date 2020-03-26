@@ -1,0 +1,15 @@
+<div class="row reports">
+  <div class="col-md-12 titleText">
+  </div>
+  <div >
+  <div class="list">
+  <div id="reportListContainer" [ngClass]="admin-container " *ngFor="let report of reportList" (click)="onSelect(report)">
+    <div class="section-2" [ngClass]="admin-section-2">
+      <div class="report-text-container">
+        <span class="main-text" >{{report.name}}</span>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
