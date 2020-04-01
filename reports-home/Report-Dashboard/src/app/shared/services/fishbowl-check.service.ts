@@ -9,7 +9,7 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class FishbowlCheckService implements CanActivate {
-  constructor(private _authService: AuthService) {}
+  constructor(private _authService: AuthService) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
