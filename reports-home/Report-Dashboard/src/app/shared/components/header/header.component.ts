@@ -136,8 +136,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
         //location.href.indexOf('reportDashboard') > -1){
         window.location.href =
           "https://ir2qa.fishbowl.com/iar/sso/logout-redirect";
-      } else {
+      } else if (
+        location.href.indexOf("qa") > -1 ||
+        location.href.indexOf("localhost") > -1
+      ) {
         window.location.href = "https://loginqa.fishbowl.com/Public/Login.aspx";
+      } else {
+        window.location.href = "https://login.fishbowl.com/Public/Login.aspx";
       }
     });
   }
