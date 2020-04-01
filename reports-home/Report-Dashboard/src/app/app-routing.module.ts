@@ -7,10 +7,11 @@ import { ReportComponent } from './core/components/report/report.component';
 import { ReportListComponent } from './core/components/report-list/report-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/reportList' , pathMatch: 'full' , canActivate: [ FishbowlCheckService, SisenseCheckService]  },
-  { path: 'reportList', component: ReportListComponent , canActivate: [ FishbowlCheckService, SisenseCheckService]},
-  { path: 'reportDashboard', component: ReportComponent ,canActivate: [ FishbowlCheckService, SisenseCheckService] }
+  { path: '', redirectTo: '/reportList', pathMatch: 'full', canActivate: [FishbowlCheckService, SisenseCheckService] },
+  { path: 'reportList', component: ReportListComponent, canActivate: [FishbowlCheckService, SisenseCheckService] },
+  { path: 'reportDashboard', component: ReportComponent, canActivate: [FishbowlCheckService, SisenseCheckService] }
 ];
+
 
 /*const routes: Routes = [
   { path: '', redirectTo: '/reportList' , pathMatch: 'full'},
@@ -19,8 +20,8 @@ const routes: Routes = [
 ];*/
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled', useHash: true})],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled', useHash: true })],
   exports: [RouterModule],
-  providers : [AuthService, FishbowlCheckService, SisenseCheckService]
+  providers: [AuthService, FishbowlCheckService, SisenseCheckService]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
