@@ -57,6 +57,13 @@ export class ReportListComponent implements OnInit, OnDestroy {
     }
   }
   onSelect(report: Report): void {
+    this.cookieService.set(
+      "_irecube",
+      "",
+      new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
+      "/",
+      "ir2qa.fishbowl.com"
+    );
     var currentECube: string;
     if (report.name === "Mailing Comparison" || report.name === "Mailing Summary") {
       currentECube = "Warehouse";
