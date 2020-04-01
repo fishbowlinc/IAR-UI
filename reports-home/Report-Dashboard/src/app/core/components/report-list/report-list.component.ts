@@ -15,7 +15,7 @@ import { AuthService } from "../../../shared/services/auth-service";
 export class ReportListComponent implements OnInit, OnDestroy {
   reportList = REPORTLIST;
   selectedReport: Report;
-  public report;
+  public report: any;
   constructor(
     private router: Router,
     private _authService: AuthService,
@@ -26,7 +26,7 @@ export class ReportListComponent implements OnInit, OnDestroy {
     this.report = dataService.getOption();
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   ngOnDestroy() {
     if (this.selectedReport) {
@@ -37,32 +37,24 @@ export class ReportListComponent implements OnInit, OnDestroy {
   }
   @HostListener("window:beforeunload")
   canDeactivate(): Observable<void> | void {
-    //if(location.href.indexOf('reportDashboard')== -1 || location.href.indexOf('reportList')==-1){
-    // to delete the cookies
     if (this.cookieService.get("_irecube")) {
       this.cookieService.set(
         "_irecube",
         "",
         new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
         "/",
-        "ir2qa.fishbowl.com",
-        true
+        "ir2qa.fishbowl.com"
       );
     }
-    //if(this._authService.isSisenseCookieExist()){
-    //this.cookieService.set("_irsession_id", '', new Date("Thu, 01 Jan 1970 00:00:01 GMT"), '/' , '.ir2qa.fishbowl.com');
-    //}
     if (this.cookieService.check(".prism_shared")) {
       this.cookieService.set(
         ".prism_shared",
         "",
         new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
         "/",
-        "sisense.fishbowl.com",
-        true
+        "sisense.fishbowl.com"
       );
     }
-    //}
   }
   onSelect(report: Report): void {
     this.cookieService.set(
@@ -70,19 +62,21 @@ export class ReportListComponent implements OnInit, OnDestroy {
       "",
       new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
       "/",
-      "ir2qa.fishbowl.com",
-      true
+      "ir2qa.fishbowl.com"
     );
-    if (report.name === "Mailing Comparison") {
-      this.cookieService.set("_irecube", window.btoa("Warehouse"));
+    var currentECube: string;
+    if (report.name === "Mailing Comparison" || report.name === "Mailing Summary") {
+      currentECube = "Warehouse";
     }
     if (report.name === "Member Summary") {
-      this.cookieService.set("_irecube", window.btoa("Monthly Summary"));
+      currentECube = "Monthly Summary";
     }
-    if (report.name === "Mailing Summary") {
-      this.cookieService.set("_irecube", window.btoa("Warehouse"));
+    if (currentECube) {
+      var now = new Date();
+      var threeHoursExpiryTime = now.setHours(now.getHours() + 3);
+      var encrptedECube = window.btoa(currentECube);
+      this.cookieService.set("_irecube", encrptedECube, threeHoursExpiryTime, "/", ".ir2qa.fishbowl.com", true);
     }
-
     this.selectedReport = report;
     this.router.navigate(["/reportDashboard"]);
   }
