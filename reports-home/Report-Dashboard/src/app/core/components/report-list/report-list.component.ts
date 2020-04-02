@@ -75,7 +75,7 @@ export class ReportListComponent implements OnInit, OnDestroy {
       var now = new Date();
       var threeHoursExpiryTime = now.setHours(now.getHours() + 3);
       var encrptedECube = window.btoa(currentECube);
-      this.cookieService.set("_irecube", encrptedECube, threeHoursExpiryTime, "/", ".ir2qa.fishbowl.com", true);
+      this.cookieService.set("_irecube", encrptedECube, threeHoursExpiryTime, "/", ".ir.fishbowl.com", true);
     }
     this.selectedReport = report;
     this.router.navigate(["/reportDashboard"]);
