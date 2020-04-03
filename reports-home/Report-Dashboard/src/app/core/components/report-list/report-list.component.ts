@@ -69,7 +69,7 @@ export class ReportListComponent implements OnInit, OnDestroy {
       currentECube = "Warehouse";
     }
     if (report.name === "Member Summary") {
-      currentECube = "Monthly Summary";
+      currentECube = "Membership Warehouse";
     }
     if (currentECube) {
       var now = new Date();
@@ -80,7 +80,7 @@ export class ReportListComponent implements OnInit, OnDestroy {
         this.cookieService.set("_irecube", encrptedECube, threeHoursExpiryTime, "/", ".ir2qa.fishbowl.com", true);
       }
       else if (location.href.indexOf("localhost") > -1) {
-        this.cookieService.set("_irecube", encrptedECube, threeHoursExpiryTime, "/", "localhost", true);
+        this.cookieService.set("_irecube", encrptedECube, threeHoursExpiryTime, "/", "localhost");
       }
       else {
         this.cookieService.set("_irecube", encrptedECube, threeHoursExpiryTime, "/", ".ir.fishbowl.com", true);
