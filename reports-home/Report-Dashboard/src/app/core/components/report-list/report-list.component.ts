@@ -68,7 +68,7 @@ export class ReportListComponent implements OnInit, OnDestroy {
     if (report.name === "Mailing Comparison" || report.name === "Mailing Summary") {
       currentECube = "Warehouse";
     }
-    if (report.name === "Member Summary") {
+    if (report.name === "Monthly Membership Report") {
       currentECube = "Membership Warehouse";
     }
     if (currentECube) {
