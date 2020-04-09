@@ -27,7 +27,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logoutUser() {
     //this.cookieService.deleteAll();
     // to delete the cookies
-    this.cookieService.deleteAll();
     /*if (this.cookieService.get('_irecube')) {
       this.cookieService.set(
         "_irecube",
@@ -150,15 +149,25 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.dataService.currentSession.source.subscribe(translatedValue => {
       if (translatedValue == "True") {
         //location.href.indexOf('reportDashboard') > -1){
-        window.location.href =
-          "https://ir2qa.fishbowl.com/iar/sso/logout-redirect";
+        if (
+          location.href.indexOf("qa") > -1 ||
+          location.href.indexOf("localhost") > -1
+        ) {
+          window.location.href =
+            "https://ir2qa.fishbowl.com/iar/sso/logout-redirect";
+        }
+        else {
+          window.location.href =
+            "https://ir.fishbowl.com/iar/sso/logout-redirect";
+        }
+
       } else if (
         location.href.indexOf("qa") > -1 ||
         location.href.indexOf("localhost") > -1
       ) {
-        window.location.href = "https://loginqa.fishbowl.com/Public/Login.aspx";
+        window.location.href = "https://ir2qa.fishbowl.com/iar/sso/logout-handler";//"https://loginqa.fishbowl.com/Public/Login.aspx";
       } else {
-        window.location.href = "https://login.fishbowl.com/Public/Login.aspx";
+        window.location.href = "https://ir.fishbowl.com/iar/sso/logout-handler";//"https://login.fishbowl.com/Public/Login.aspx";
       }
     });
   }
