@@ -20,21 +20,28 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private dataService: DataService,
     private router: Router,
     private cookieService: CookieService
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   logoutUser() {
     //this.cookieService.deleteAll();
     // to delete the cookies
-    if (this.cookieService.get("_irecube")) {
+    this.cookieService.deleteAll();
+    /*if (this.cookieService.get('_irecube')) {
       this.cookieService.set(
         "_irecube",
         "",
         new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
-        "/",
-        "ir2qa.fishbowl.com",
-        true
+        "/"
+      );
+    }
+    else if (this.cookieService.get('_irqaecube')) {
+      this.cookieService.set(
+        "_irqaecube",
+        "",
+        new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
+        "/"
       );
     }
 
@@ -122,15 +129,24 @@ export class HeaderComponent implements OnInit, OnDestroy {
       }
     }
     if (this._authService.isSisenseCookieExist()) {
-      this.cookieService.set(
-        "_irsession_id",
-        "",
-        new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
-        "/",
-        ".ir2qa.fishbowl.com",
-        true
-      );
-    }
+      if (this.cookieService.get('_irsessionid')) {
+        this.cookieService.set(
+          "_irsessionid",
+          "",
+          new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
+          "/"
+        );
+      }
+      else if (this.cookieService.get('_irqasessionid')) {
+        this.cookieService.set(
+          "_irqasessionid",
+          "",
+          new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
+          "/"
+        );
+      }
+
+    }*/
     this.dataService.currentSession.source.subscribe(translatedValue => {
       if (translatedValue == "True") {
         //location.href.indexOf('reportDashboard') > -1){
@@ -147,5 +163,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {}
+  ngOnDestroy() { }
 }
