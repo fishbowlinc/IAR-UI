@@ -77,13 +77,13 @@ export class ReportListComponent implements OnInit, OnDestroy {
       var encrptedECube = window.btoa(currentECube);
       if (
         location.href.indexOf("qa") > -1) {
-        this.cookieService.set("_irecube", encrptedECube, threeHoursExpiryTime, "/", ".ir2qa.fishbowl.com", true);
+        this.cookieService.set("_irqaecube", encrptedECube, threeHoursExpiryTime, "/", ".fishbowl.com", true);
       }
       else if (location.href.indexOf("localhost") > -1) {
-        this.cookieService.set("_irecube", encrptedECube, threeHoursExpiryTime, "/", "localhost");
+        this.cookieService.set("_irqaecube", encrptedECube, threeHoursExpiryTime, "/", "localhost");
       }
       else {
-        this.cookieService.set("_irecube", encrptedECube, threeHoursExpiryTime, "/", ".ir.fishbowl.com", true);
+        this.cookieService.set("_irecube", encrptedECube, threeHoursExpiryTime, "/", ".fishbowl.com", true);
       }
     }
     this.selectedReport = report;
