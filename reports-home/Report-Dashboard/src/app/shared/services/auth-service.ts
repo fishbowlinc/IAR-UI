@@ -7,7 +7,13 @@ export class AuthService {
     constructor(private cookieService: CookieService) { }
 
     isSisenseCookieExist() {
-        const ir_SessionId = this.cookieService.get('_irsession_id');
+        var ir_SessionId: String
+        if (this.cookieService.get('_irsessionid')) {
+            ir_SessionId = this.cookieService.get('_irsessionid');
+        }
+        else if (this.cookieService.get('_irqasessionid')) {
+            ir_SessionId = this.cookieService.get('_irqasessionid');
+        }
         if (ir_SessionId != null && ir_SessionId.trim().length > 0) {
             return true;
         }
