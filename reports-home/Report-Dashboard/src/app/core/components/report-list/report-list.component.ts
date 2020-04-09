@@ -37,15 +37,22 @@ export class ReportListComponent implements OnInit, OnDestroy {
   }
   @HostListener("window:beforeunload")
   canDeactivate(): Observable<void> | void {
-    if (this.cookieService.get("_irecube")) {
+    if (this.cookieService.get('_irecube')) {
       this.cookieService.set(
         "_irecube",
         "",
         new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
-        "/",
-        "ir2qa.fishbowl.com"
+        "/"
       );
     }
+    else if (this.cookieService.get('_irqaecube')) {
+      this.cookieService.set(
+        "_irqaecube",
+        "",
+        new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
+        "/"
+      );
+    };
     if (this.cookieService.check(".prism_shared")) {
       this.cookieService.set(
         ".prism_shared",
@@ -57,14 +64,23 @@ export class ReportListComponent implements OnInit, OnDestroy {
     }
   }
   onSelect(report: Report): void {
-    this.cookieService.set(
-      "_irecube",
-      "",
-      new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
-      "/",
-      "ir2qa.fishbowl.com"
-    );
     var currentECube: string;
+    if (this.cookieService.get('_irecube')) {
+      this.cookieService.set(
+        "_irecube",
+        "",
+        new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
+        "/"
+      );
+    }
+    else if (this.cookieService.get('_irqaecube')) {
+      this.cookieService.set(
+        "_irqaecube",
+        "",
+        new Date("Thu, 01 Jan 1970 00:00:01 GMT"),
+        "/"
+      );
+    };
     if (report.name === "Mailing Comparison" || report.name === "Mailing Summary") {
       currentECube = "Warehouse";
     }
