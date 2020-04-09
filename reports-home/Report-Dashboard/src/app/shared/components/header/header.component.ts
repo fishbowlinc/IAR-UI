@@ -27,8 +27,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logoutUser() {
     //this.cookieService.deleteAll();
     // to delete the cookies
-
-    if (this.cookieService.get('_irecube')) {
+    this.cookieService.deleteAll();
+    /*if (this.cookieService.get('_irecube')) {
       this.cookieService.set(
         "_irecube",
         "",
@@ -146,7 +146,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         );
       }
 
-    }
+    }*/
     this.dataService.currentSession.source.subscribe(translatedValue => {
       if (translatedValue == "True") {
         //location.href.indexOf('reportDashboard') > -1){
